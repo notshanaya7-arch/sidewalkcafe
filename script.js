@@ -1,219 +1,276 @@
-/* ==================================================
-   SIDEWALK INTERACTIONS
-================================================== */
-
-
 /* =========================================
-   CUSTOM CURSOR
+   SIDEWALK — INTERACTIONS
 ========================================= */
+
+
+/* CUSTOM COFFEE CURSOR */
 
 const cursor = document.querySelector(".cursor");
-const cursorRing = document.querySelector(".cursor-ring");
+const cursorGlow = document.querySelector(".cursor-glow");
 
-document.addEventListener("mousemove", (event) => {
+let mouseX = 0;
+let mouseY = 0;
 
-    cursor.style.left = event.clientX + "px";
-    cursor.style.top = event.clientY + "px";
+let currentX = 0;
+let currentY = 0;
 
-    cursorRing.style.left = event.clientX + "px";
-    cursorRing.style.top = event.clientY + "px";
+document.addEventListener("mousemove", (e) => {
 
-});
-
-
-/* =========================================
-   CURSOR HOVER EFFECT
-========================================= */
-
-const hoverElements =
-    document.querySelectorAll("a, button, .philosophy-card, .menu-item, .location, .hoodie-card");
-
-hoverElements.forEach((element) => {
-
-    element.addEventListener("mouseenter", () => {
-
-        cursorRing.style.width = "60px";
-        cursorRing.style.height = "60px";
-
-    });
-
-    element.addEventListener("mouseleave", () => {
-
-        cursorRing.style.width = "35px";
-        cursorRing.style.height = "35px";
-
-    });
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 
 });
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+function animateCursor() {
 
-const mobileButton = document.querySelector(".mobile-menu");
-const nav = document.querySelector(".navbar nav");
+  currentX += (mouseX - currentX) * 0.14;
+  currentY += (mouseY - currentY) * 0.14;
 
-mobileButton.addEventListener("click", () => {
+  cursor.style.left = `${currentX}px`;
+  cursor.style.top = `${currentY}px`;
 
-    nav.classList.toggle("show-mobile");
+  cursorGlow.style.left = `${mouseX}px`;
+  cursorGlow.style.top = `${mouseY}px`;
+
+  requestAnimationFrame(animateCursor);
+
+}
+
+animateCursor();
+
+
+
+/* HERO CUP PARALLAX */
+
+const heroCup = document.querySelector(".hero-object");
+
+document.addEventListener("mousemove", (e) => {
+
+  if (!heroCup) return;
+
+  const x = (window.innerWidth / 2 - e.clientX) / 45;
+  const y = (window.innerHeight / 2 - e.clientY) / 45;
+
+  heroCup.style.transform =
+    `translate(${x}px, calc(-50% + ${y}px)) rotate(${x * -.3}deg)`;
 
 });
 
 
-/* =========================================
-   3D COFFEE MOUSE PARALLAX
-========================================= */
 
-const coffee = document.querySelector(".coffee-scene");
+/* BIG COFFEE PARALLAX */
 
-document.addEventListener("mousemove", (event) => {
+const coffeeBig = document.querySelector(".coffee-big");
 
-    if (!coffee) return;
+document.addEventListener("mousemove", (e) => {
 
-    const x =
-        (event.clientX / window.innerWidth - 0.5) * 18;
+  if (!coffeeBig) return;
 
-    const y =
-        (event.clientY / window.innerHeight - 0.5) * 12;
+  const x = (e.clientX / window.innerWidth - 0.5) * 18;
+  const y = (e.clientY / window.innerHeight - 0.5) * 18;
 
-    coffee.style.transform =
-        `translateY(-50%) rotateY(${x}deg) rotateX(${-y}deg)`;
+  coffeeBig.style.transform =
+    `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${8 + x / 3}deg)`;
 
 });
 
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
 
-const revealElements = document.querySelectorAll(
-    ".story-grid, .philosophy-card, .menu-item, .location, .hoodie-card, .contact-grid"
-);
+/* HOVER CURSOR */
 
-const revealObserver = new IntersectionObserver(
+const interactiveElements =
+  document.querySelectorAll("a, .food-item, .location-card, .hoodie-card, .bake-cloud span");
+
+interactiveElements.forEach((element) => {
+
+  element.addEventListener("mouseenter", () => {
+
+    cursor.style.transform =
+      "translate(-50%, -50%) scale(1.45)";
+
+  });
+
+  element.addEventListener("mouseleave", () => {
+
+    cursor.style.transform =
+      "translate(-50%, -50%) scale(1)";
+
+  });
+
+});
+
+
+
+/* SCROLL REVEAL */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+const revealObserver =
+  new IntersectionObserver(
+
     (entries) => {
 
-        entries.forEach((entry) => {
+      entries.forEach((entry) => {
 
-            if (entry.isIntersecting) {
+        if (entry.isIntersecting) {
 
-                entry.target.classList.add("visible");
+          entry.target.classList.add("active");
 
-                revealObserver.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
 
-            }
+        }
 
-        });
+      });
 
     },
+
     {
-        threshold: 0.12
+      threshold: 0.15
     }
-);
+
+  );
+
 
 revealElements.forEach((element) => {
 
-    element.classList.add("reveal");
-
-    revealObserver.observe(element);
+  revealObserver.observe(element);
 
 });
 
 
-/* =========================================
-   HOVER 3D TILT
-========================================= */
 
-const cards = document.querySelectorAll(
-    ".philosophy-card, .menu-item, .location"
-);
+/* MAGNETIC BUTTONS */
 
-cards.forEach((card) => {
+const buttons =
+  document.querySelectorAll(".button, .nav-button, .final-button, .spotify-button");
 
-    card.addEventListener("mousemove", (event) => {
+buttons.forEach((button) => {
 
-        const rect = card.getBoundingClientRect();
+  button.addEventListener("mousemove", (e) => {
 
-        const x =
-            event.clientX - rect.left;
+    const rect = button.getBoundingClientRect();
 
-        const y =
-            event.clientY - rect.top;
+    const x =
+      e.clientX - rect.left - rect.width / 2;
 
-        const centerX =
-            rect.width / 2;
+    const y =
+      e.clientY - rect.top - rect.height / 2;
 
-        const centerY =
-            rect.height / 2;
+    button.style.transform =
+      `translate(${x * .12}px, ${y * .12}px)`;
 
-        const rotateX =
-            ((y - centerY) / centerY) * -3;
+  });
 
-        const rotateY =
-            ((x - centerX) / centerX) * 3;
+  button.addEventListener("mouseleave", () => {
 
-        card.style.transform =
-            `perspective(800px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-8px)`;
+    button.style.transform = "translate(0,0)";
 
-    });
-
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "";
-
-    });
+  });
 
 });
 
 
-/* =========================================
-   PARALLAX COFFEE BACKGROUND
-========================================= */
 
-const coffeeBanner = document.querySelector(".coffee-image");
+/* HOODIE 3D TILT */
+
+const hoodieCards =
+  document.querySelectorAll(".hoodie-card");
+
+hoodieCards.forEach((card) => {
+
+  card.addEventListener("mousemove", (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x =
+      (e.clientX - rect.left) / rect.width;
+
+    const y =
+      (e.clientY - rect.top) / rect.height;
+
+    const rotateY =
+      (x - .5) * 8;
+
+    const rotateX =
+      (y - .5) * -8;
+
+    card.style.transform =
+      `perspective(900px)
+       rotateX(${rotateX}deg)
+       rotateY(${rotateY}deg)
+       translateY(-8px)`;
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    card.style.transform =
+      "perspective(900px) rotateX(0) rotateY(0) translateY(0)";
+
+  });
+
+});
+
+
+
+/* BEANS FLOATING */
+
+const beans =
+  document.querySelectorAll(".beans");
 
 window.addEventListener("scroll", () => {
 
-    if (!coffeeBanner) return;
+  const scroll =
+    window.scrollY;
 
-    const rect =
-        coffeeBanner.parentElement.getBoundingClientRect();
+  beans.forEach((bean, index) => {
 
-    const offset =
-        rect.top * 0.12;
+    const speed =
+      (index + 1) * .08;
 
-    coffeeBanner.style.transform =
-        `translateY(${offset}px) scale(1.08)`;
+    bean.style.transform =
+      `translateY(${scroll * speed}px) rotate(${scroll * speed}deg)`;
+
+  });
 
 });
 
 
-/* =========================================
-   SMOOTH ANCHOR LINKS
-========================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
+/* ACTIVE NAV */
 
-    link.addEventListener("click", (event) => {
+const sections =
+  document.querySelectorAll("section[id]");
 
-        const target =
-            document.querySelector(link.getAttribute("href"));
+const navLinks =
+  document.querySelectorAll(".nav nav a");
 
-        if (!target) return;
+window.addEventListener("scroll", () => {
 
-        event.preventDefault();
+  let current = "";
 
-        target.scrollIntoView({
-            behavior: "smooth"
-        });
+  sections.forEach((section) => {
 
-        nav.classList.remove("show-mobile");
+    const sectionTop =
+      section.offsetTop - 200;
 
-    });
+    if (window.scrollY >= sectionTop) {
+
+      current = section.getAttribute("id");
+
+    }
+
+  });
+
+  navLinks.forEach((link) => {
+
+    link.style.opacity =
+      link.getAttribute("href") === `#${current}`
+        ? "1"
+        : ".55";
+
+  });
 
 });
