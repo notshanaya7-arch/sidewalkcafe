@@ -1,13 +1,29 @@
 :root {
-  --espresso: #211914;
-  --coffee: #50352a;
-  --cream: #f2eadc;
-  --paper: #faf6ee;
-  --olive: #69705a;
-  --orange: #b96842;
-  --yellow: #d5b15a;
-  --white: #fffaf1;
-  --black: #171412;
+  /* SIDEWALK VINTAGE PALETTE */
+
+  --alabaster: #EDE8DE;
+  --warm-greige: #B8AA98;
+  --vintage-rosewood: #8B5E58;
+  --muted-olive: #747A62;
+  --charcoal: #2D2B28;
+  --espresso: #3A2923;
+
+  /* Website mapping */
+
+  --paper: var(--alabaster);
+  --cream: #E5DED1;
+
+  --coffee: var(--espresso);
+
+  --orange: var(--vintage-rosewood);
+
+  --yellow: #C7B894;
+
+  --olive: var(--muted-olive);
+
+  --black: #242320;
+
+  --white: #F7F3EA;
 }
 
 * {
