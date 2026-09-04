@@ -1139,3 +1139,212 @@ footer {
   }
 
 }
+/* =====================================
+   SIDEWALK SUBTLE ANIMATIONS
+===================================== */
+
+/* Section reveal */
+
+.section {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 1s cubic-bezier(.22,.61,.36,1),
+    transform 1s cubic-bezier(.22,.61,.36,1);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Headings gently appear */
+
+.story h2,
+.coffee h2,
+.food h2,
+.bakes h2,
+.people h2,
+.wearables h2,
+.sounds h2,
+.locations h2 {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 1s ease .15s,
+    transform 1s cubic-bezier(.22,.61,.36,1) .15s;
+}
+
+.section.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Images */
+
+.story-image-wrap img,
+.coffee-image img,
+.food-card img,
+.people-image img {
+  transition:
+    transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* Image hover */
+
+.story-image-wrap:hover img,
+.coffee-image:hover img,
+.food-card:hover img,
+.people-image:hover img {
+  transform: scale(1.035);
+}
+
+
+/* Hoodie hover */
+
+.hoodie-image {
+  overflow: hidden;
+}
+
+.hoodie-image img {
+  transition:
+    transform 1s cubic-bezier(.22,.61,.36,1);
+}
+
+.hoodie-card:hover .hoodie-image img {
+  transform: scale(1.04);
+}
+
+
+/* Location cards */
+
+.location-card {
+  transition:
+    transform .5s cubic-bezier(.22,.61,.36,1),
+    box-shadow .5s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 25px 50px rgba(45,43,40,.12);
+}
+
+
+/* Food tags */
+
+.food-tags span {
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
+}
+
+.food-tags span:hover {
+  background: var(--espresso);
+  color: var(--alabaster);
+  transform: translateY(-3px);
+}
+
+
+/* Floating labels */
+
+.floating-label {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.label-two {
+  animation-delay: -2s;
+}
+
+@keyframes gentleFloat {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+
+}
+
+
+/* Open badge */
+
+.open-badge {
+  animation:
+    badgeFloat 5s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+
+  0%, 100% {
+    transform: rotate(-12deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-8deg) translateY(-8px);
+  }
+
+}
+
+
+/* Marquee */
+
+.marquee div {
+  will-change: transform;
+}
+
+
+/* Buttons */
+
+.button,
+.spotify-button,
+.nav-button {
+  transition:
+    transform .3s ease,
+    background .3s ease;
+}
+
+.button:hover,
+.spotify-button:hover,
+.nav-button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* Contact */
+
+.contact h2 {
+  transition: transform .5s ease;
+}
+
+.contact:hover h2 {
+  transform: scale(1.015);
+}
+
+
+/* Smooth links */
+
+a {
+  transition: opacity .3s ease;
+}
+
+
+/* Reduce motion for accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+}
