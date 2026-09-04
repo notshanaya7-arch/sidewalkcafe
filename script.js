@@ -1,276 +1,151 @@
-/* =========================================
-   SIDEWALK — INTERACTIONS
-========================================= */
-
-
-/* CUSTOM COFFEE CURSOR */
+/* =========================
+   SMOOTH CURSOR
+========================= */
 
 const cursor = document.querySelector(".cursor");
-const cursorGlow = document.querySelector(".cursor-glow");
+const ring = document.querySelector(".cursor-ring");
 
-let mouseX = 0;
-let mouseY = 0;
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
 
-let currentX = 0;
-let currentY = 0;
+let ringX = mouseX;
+let ringY = mouseY;
 
 document.addEventListener("mousemove", (e) => {
-
   mouseX = e.clientX;
   mouseY = e.clientY;
 
+  cursor.style.left = mouseX + "px";
+  cursor.style.top = mouseY + "px";
 });
-
 
 function animateCursor() {
 
-  currentX += (mouseX - currentX) * 0.14;
-  currentY += (mouseY - currentY) * 0.14;
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) * 0.12;
 
-  cursor.style.left = `${currentX}px`;
-  cursor.style.top = `${currentY}px`;
-
-  cursorGlow.style.left = `${mouseX}px`;
-  cursorGlow.style.top = `${mouseY}px`;
+  ring.style.left = ringX + "px";
+  ring.style.top = ringY + "px";
 
   requestAnimationFrame(animateCursor);
-
 }
 
 animateCursor();
 
 
+/* =========================
+   HERO CUP PARALLAX
+========================= */
 
-/* HERO CUP PARALLAX */
-
-const heroCup = document.querySelector(".hero-object");
-
-document.addEventListener("mousemove", (e) => {
-
-  if (!heroCup) return;
-
-  const x = (window.innerWidth / 2 - e.clientX) / 45;
-  const y = (window.innerHeight / 2 - e.clientY) / 45;
-
-  heroCup.style.transform =
-    `translate(${x}px, calc(-50% + ${y}px)) rotate(${x * -.3}deg)`;
-
-});
-
-
-
-/* BIG COFFEE PARALLAX */
-
-const coffeeBig = document.querySelector(".coffee-big");
+const cup = document.querySelector(".cup");
 
 document.addEventListener("mousemove", (e) => {
 
-  if (!coffeeBig) return;
+  if (!cup) return;
 
-  const x = (e.clientX / window.innerWidth - 0.5) * 18;
-  const y = (e.clientY / window.innerHeight - 0.5) * 18;
+  const x = (e.clientX / window.innerWidth - .5);
+  const y = (e.clientY / window.innerHeight - .5);
 
-  coffeeBig.style.transform =
-    `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${8 + x / 3}deg)`;
-
+  cup.style.transform = `
+    translate(${x * 18}px, ${y * 18}px)
+    rotate(-13deg)
+    rotateY(${-18 + x * 12}deg)
+    rotateX(${y * -8}deg)
+  `;
 });
 
 
+/* =========================
+   BEAN PARALLAX
+========================= */
 
-/* HOVER CURSOR */
+const beans = document.querySelectorAll(".bean");
 
-const interactiveElements =
-  document.querySelectorAll("a, .food-item, .location-card, .hoodie-card, .bake-cloud span");
+document.addEventListener("mousemove", (e) => {
 
-interactiveElements.forEach((element) => {
-
-  element.addEventListener("mouseenter", () => {
-
-    cursor.style.transform =
-      "translate(-50%, -50%) scale(1.45)";
-
-  });
-
-  element.addEventListener("mouseleave", () => {
-
-    cursor.style.transform =
-      "translate(-50%, -50%) scale(1)";
-
-  });
-
-});
-
-
-
-/* SCROLL REVEAL */
-
-const revealElements =
-  document.querySelectorAll(".reveal");
-
-const revealObserver =
-  new IntersectionObserver(
-
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("active");
-
-          revealObserver.unobserve(entry.target);
-
-        }
-
-      });
-
-    },
-
-    {
-      threshold: 0.15
-    }
-
-  );
-
-
-revealElements.forEach((element) => {
-
-  revealObserver.observe(element);
-
-});
-
-
-
-/* MAGNETIC BUTTONS */
-
-const buttons =
-  document.querySelectorAll(".button, .nav-button, .final-button, .spotify-button");
-
-buttons.forEach((button) => {
-
-  button.addEventListener("mousemove", (e) => {
-
-    const rect = button.getBoundingClientRect();
-
-    const x =
-      e.clientX - rect.left - rect.width / 2;
-
-    const y =
-      e.clientY - rect.top - rect.height / 2;
-
-    button.style.transform =
-      `translate(${x * .12}px, ${y * .12}px)`;
-
-  });
-
-  button.addEventListener("mouseleave", () => {
-
-    button.style.transform = "translate(0,0)";
-
-  });
-
-});
-
-
-
-/* HOODIE 3D TILT */
-
-const hoodieCards =
-  document.querySelectorAll(".hoodie-card");
-
-hoodieCards.forEach((card) => {
-
-  card.addEventListener("mousemove", (e) => {
-
-    const rect = card.getBoundingClientRect();
-
-    const x =
-      (e.clientX - rect.left) / rect.width;
-
-    const y =
-      (e.clientY - rect.top) / rect.height;
-
-    const rotateY =
-      (x - .5) * 8;
-
-    const rotateX =
-      (y - .5) * -8;
-
-    card.style.transform =
-      `perspective(900px)
-       rotateX(${rotateX}deg)
-       rotateY(${rotateY}deg)
-       translateY(-8px)`;
-
-  });
-
-  card.addEventListener("mouseleave", () => {
-
-    card.style.transform =
-      "perspective(900px) rotateX(0) rotateY(0) translateY(0)";
-
-  });
-
-});
-
-
-
-/* BEANS FLOATING */
-
-const beans =
-  document.querySelectorAll(".beans");
-
-window.addEventListener("scroll", () => {
-
-  const scroll =
-    window.scrollY;
+  const x = e.clientX / window.innerWidth - .5;
+  const y = e.clientY / window.innerHeight - .5;
 
   beans.forEach((bean, index) => {
 
-    const speed =
-      (index + 1) * .08;
+    const speed = (index + 1) * 12;
 
-    bean.style.transform =
-      `translateY(${scroll * speed}px) rotate(${scroll * speed}deg)`;
+    bean.style.marginLeft = `${x * speed}px`;
+    bean.style.marginTop = `${y * speed}px`;
 
   });
 
 });
 
 
+/* =========================
+   HOVER CURSOR
+========================= */
 
-/* ACTIVE NAV */
+const interactive = document.querySelectorAll("a, button");
 
-const sections =
-  document.querySelectorAll("section[id]");
+interactive.forEach((item) => {
 
-const navLinks =
-  document.querySelectorAll(".nav nav a");
+  item.addEventListener("mouseenter", () => {
+
+    ring.style.width = "70px";
+    ring.style.height = "70px";
+
+  });
+
+  item.addEventListener("mouseleave", () => {
+
+    ring.style.width = "45px";
+    ring.style.height = "45px";
+
+  });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
+
+
+/* =========================
+   IMAGE PARALLAX
+========================= */
 
 window.addEventListener("scroll", () => {
 
-  let current = "";
+  const scroll = window.scrollY;
 
-  sections.forEach((section) => {
+  const hero = document.querySelector(".hero");
 
-    const sectionTop =
-      section.offsetTop - 200;
+  if (hero) {
 
-    if (window.scrollY >= sectionTop) {
+    hero.style.backgroundPosition =
+      `center ${scroll * 0.12}px`;
 
-      current = section.getAttribute("id");
-
-    }
-
-  });
-
-  navLinks.forEach((link) => {
-
-    link.style.opacity =
-      link.getAttribute("href") === `#${current}`
-        ? "1"
-        : ".55";
-
-  });
+  }
 
 });
