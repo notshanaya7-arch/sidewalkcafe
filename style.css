@@ -1999,3 +1999,71 @@ footer {
   }
 
 }
+/* =========================================================
+   SIDEWALK HERO — REAL PHOTO
+   ONLY CHANGES THE HERO VISUAL
+   ========================================================= */
+
+/* Remove the fake 2D house */
+#coffee-model,
+.model-glow,
+.floating-label,
+.open-badge {
+  display: none !important;
+}
+
+/* Hero image container */
+.hero-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  border-radius: 6px;
+}
+
+/* REAL SIDEWALK PHOTO */
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("https://sidewalkindia.com/wp-content/uploads/2023/08/DSC_0011-scaled.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+}
+
+/* subtle image overlay so the design still looks premium */
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(20, 16, 13, 0.04),
+    rgba(20, 16, 13, 0.16)
+  );
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Keep existing hero content above image */
+.hero-visual > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero-visual {
+    min-height: 430px;
+  }
+
+  .hero-visual::before {
+    background-position: center;
+  }
+}
