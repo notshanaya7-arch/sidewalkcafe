@@ -1,932 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SideWalk — Coffee. Food. Community.</title>
+  <title>SideWalk — Your Everyday Neighbourhood Space</title>
 
-    <meta
-        name="description"
-        content="SideWalk — Coffee, food, bakery, community, music and café culture."
-    >
+  <meta
+    name="description"
+    content="SideWalk — a community inspired café built around coffee, food, bakery, music and community."
+  >
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    rel="stylesheet"
+  >
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =========================================
-     LOADER
-========================================= -->
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor">
+    <div class="cursor-cup">
+      <div class="cursor-coffee"></div>
+      <div class="cursor-handle"></div>
+    </div>
+  </div>
 
-<div class="loader">
-    <div class="loader-logo">SW</div>
-    <p>BREWING SOMETHING GOOD...</p>
-</div>
-
-
-<!-- =========================================
-     CUSTOM CURSOR
-========================================= -->
-
-<div class="cursor"></div>
-<div class="cursor-ring"></div>
+  <div class="cursor-glow"></div>
 
 
-<!-- =========================================
-     NAVIGATION
-========================================= -->
+  <!-- NAVIGATION -->
+  <header class="nav">
 
-<header class="navbar">
-
-    <a href="#home" class="logo">
-        <span>SW</span>
-        <strong>SideWalk</strong>
+    <a href="#top" class="logo">
+      <span>SW</span>
+      <small>SIDEWALK</small>
     </a>
 
     <nav>
-        <a href="#story">Story</a>
-        <a href="#menu">Menu</a>
-        <a href="#locations">Locations</a>
-        <a href="#wearables">Wearables</a>
-        <a href="#sounds">Sounds</a>
+      <a href="#story">Story</a>
+      <a href="#coffee">Coffee</a>
+      <a href="#food">Food</a>
+      <a href="#locations">Locations</a>
+      <a href="#wearables">Wearables</a>
+      <a href="#sounds">Sounds</a>
     </nav>
 
     <a href="#locations" class="nav-button">
-        FIND US ↗
+      Find Us <span>↗</span>
     </a>
 
-    <button class="mobile-menu">
-        ☰
-    </button>
-
-</header>
+  </header>
 
 
-<!-- =========================================
-     HERO
-========================================= -->
+  <!-- HERO -->
+  <main id="top">
 
-<main id="home">
+    <section class="hero">
 
-<section class="hero">
+      <div class="hero-noise"></div>
 
-    <div class="hero-background"></div>
+      <div class="hero-copy">
 
-    <div class="hero-noise"></div>
-
-    <div class="hero-content">
-
-        <div class="hero-small">
-            COMMUNITY INSPIRED CAFÉ · EST. 2022
-        </div>
+        <p class="eyebrow">
+          COMMUNITY INSPIRED CAFÉ
+        </p>
 
         <h1>
-            Your everyday
-            <span>neighbourhood</span>
-            space.
+          Your everyday
+          <em>neighbourhood</em>
+          space.
         </h1>
 
-        <p>
-            Coffee, comfort food, fresh bakes,
-            music and good people.
-            Your second home, just around the corner.
+        <p class="hero-description">
+          Coffee, food, bakes, music and good people —
+          all under one roof.
         </p>
 
         <div class="hero-buttons">
+          <a href="#story" class="button button-light">
+            Discover SideWalk <span>↓</span>
+          </a>
 
-            <a href="#menu" class="button white-button">
-                EXPLORE MENU ↓
-            </a>
-
-            <a href="#story" class="simple-link">
-                OUR STORY ↗
-            </a>
-
+          <a href="#locations" class="button button-outline">
+            Find a house <span>↗</span>
+          </a>
         </div>
 
-    </div>
+      </div>
 
 
-    <!-- 3D COFFEE OBJECT -->
+      <!-- 3D COFFEE -->
+      <div class="hero-object">
 
-    <div class="coffee-scene">
+        <div class="coffee-shadow"></div>
 
-        <div class="coffee-glow"></div>
+        <div class="big-cup">
 
-        <div class="coffee-cup">
+          <div class="cup-body">
 
-            <div class="coffee-liquid"></div>
+            <div class="cup-rim"></div>
+
+            <div class="coffee-surface">
+              <div class="coffee-swirl"></div>
+            </div>
 
             <div class="cup-logo">
-                SW
+              SW
             </div>
 
-            <div class="cup-highlight"></div>
+          </div>
+
+          <div class="cup-handle"></div>
+
+          <div class="steam steam-one"></div>
+          <div class="steam steam-two"></div>
+          <div class="steam steam-three"></div>
 
         </div>
 
-        <div class="cup-shadow"></div>
-
-    </div>
+      </div>
 
 
-    <div class="hero-stamp">
+      <!-- HOURS -->
+      <div class="hours">
 
-        <span>OPEN</span>
+        <div class="hours-circle">
+          <span>OPEN</span>
+          <strong>09</strong>
+          <small>AM</small>
+          <i>—</i>
+          <strong>01</strong>
+          <small>AM</small>
+        </div>
 
-        <strong>09:00</strong>
+        <p>EVERYDAY</p>
 
-        <small>— 01:00</small>
-
-        <span>EVERY DAY</span>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     MOVING TICKER
-========================================= -->
-
-<section class="ticker">
-
-    <div class="ticker-track">
-
-        <span>COFFEE</span>
-        <b>✦</b>
-
-        <span>FOOD</span>
-        <b>✦</b>
-
-        <span>BAKERY</span>
-        <b>✦</b>
-
-        <span>COMMUNITY</span>
-        <b>✦</b>
-
-        <span>MUSIC</span>
-        <b>✦</b>
-
-        <span>GOOD PEOPLE</span>
-        <b>✦</b>
-
-        <span>COFFEE</span>
-        <b>✦</b>
-
-        <span>FOOD</span>
-        <b>✦</b>
-
-        <span>BAKERY</span>
-        <b>✦</b>
-
-        <span>COMMUNITY</span>
-        <b>✦</b>
-
-        <span>MUSIC</span>
-        <b>✦</b>
-
-    </div>
-
-</section>
+      </div>
 
 
-<!-- =========================================
-     STORY
-========================================= -->
+      <div class="scroll-label">
+        SCROLL TO EXPLORE
+        <span>↓</span>
+      </div>
 
-<section class="story section" id="story">
+    </section>
 
-    <div class="section-number">
-        01 — THE IDEA
-    </div>
 
-    <div class="story-grid">
+    <!-- STORY -->
+    <section class="story section-light" id="story">
+
+      <div class="section-number">01 / STORY</div>
+
+      <div class="story-grid">
+
+        <div class="story-title reveal">
+
+          <p class="eyebrow dark">
+            SINCE 2022
+          </p>
+
+          <h2>
+            Not just a café.
+            <em>A second home.</em>
+          </h2>
+
+        </div>
+
+
+        <div class="story-text reveal">
+
+          <p class="large-copy">
+            We started SideWalk in 2022 with a simple idea:
+            creating a second home for the people of Kanpur.
+          </p>
+
+          <p>
+            What started as an idea became a landmark in Kanpur,
+            and then found a new home in Lucknow and Agra.
+          </p>
+
+          <p>
+            Because it takes a village to run a restaurant —
+            and nothing would be possible without our team,
+            our community and the people who walk through our doors.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="story-marquee">
+        <div>
+          SECOND HOME · COMMUNITY · COFFEE · FOOD · MUSIC ·
+          SECOND HOME · COMMUNITY · COFFEE · FOOD · MUSIC ·
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- COFFEE -->
+    <section class="coffee-section" id="coffee">
+
+      <div class="section-number light-number">02 / COFFEE</div>
+
+      <div class="coffee-heading reveal">
+
+        <p class="eyebrow">
+          SOURCED FROM THE BEST
+        </p>
+
+        <h2>
+          Coffee,
+          <em>obsessed over.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="coffee-stage">
+
+        <div class="beans bean-one">●</div>
+        <div class="beans bean-two">●</div>
+        <div class="beans bean-three">●</div>
+
+        <div class="coffee-big">
+
+          <div class="coffee-big-body">
+
+            <div class="coffee-big-top">
+              <div class="coffee-liquid"></div>
+            </div>
+
+            <div class="coffee-big-logo">
+              SW
+            </div>
+
+          </div>
+
+          <div class="coffee-big-handle"></div>
+
+        </div>
+
+      </div>
+
+
+      <div class="coffee-info">
+
+        <div class="coffee-stat">
+          <strong>100%</strong>
+          <span>ARABICA</span>
+        </div>
+
+        <div class="coffee-description">
+          <p>
+            Our specialty custom coffee blend is made by
+            Bili Hu Coffee Roasters.
+          </p>
+
+          <p>
+            We're constantly learning, experimenting and
+            chasing the perfect espresso.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="signature-row">
 
         <div>
-
-            <h2>
-                Not just a café.
-                <em>A second home.</em>
-            </h2>
-
+          <span>01</span>
+          Brown Butter Latte
         </div>
 
-        <div class="story-text">
-
-            <p>
-                SideWalk started in 2022 in Kanpur
-                with one simple idea — to create a
-                neighbourhood space where people
-                could slow down, connect and feel at home.
-            </p>
-
-            <p>
-                Coffee became the beginning.
-                Food, bakery, music and community
-                became everything around it.
-            </p>
-
-            <a href="#locations" class="circle-button">
-                DISCOVER
-                <span>↗</span>
-            </a>
-
+        <div>
+          <span>02</span>
+          Cinnamon Spiced Cappuccino
         </div>
 
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     3D PHILOSOPHY CARDS
-========================================= -->
-
-<section class="philosophy">
-
-    <div class="philosophy-card card-one">
-
-        <span class="card-number">01</span>
-
-        <div class="floating-icon">
-            ☕
+        <div>
+          <span>03</span>
+          House Drip Vietnamese
         </div>
 
-        <h3>COFFEE</h3>
+        <div>
+          <span>04</span>
+          811 Hot Chocolate
+        </div>
 
-        <p>
-            100% Arabica custom blend,
-            roasted by Bili Hu Coffee Roasters.
+      </div>
+
+    </section>
+
+
+    <!-- FOOD -->
+    <section class="food-section section-light" id="food">
+
+      <div class="section-number">03 / FOOD</div>
+
+      <div class="food-header reveal">
+
+        <p class="eyebrow dark">
+          MADE WITH HEART
         </p>
-
-    </div>
-
-
-    <div class="philosophy-card card-two">
-
-        <span class="card-number">02</span>
-
-        <div class="floating-icon">
-            ✦
-        </div>
-
-        <h3>FOOD</h3>
-
-        <p>
-            Comfort classics with
-            signature SideWalk twists.
-        </p>
-
-    </div>
-
-
-    <div class="philosophy-card card-three">
-
-        <span class="card-number">03</span>
-
-        <div class="floating-icon">
-            ◌
-        </div>
-
-        <h3>BAKERY</h3>
-
-        <p>
-            Fresh desserts, cakes and
-            house bakes made in-house.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     MENU
-========================================= -->
-
-<section class="menu section" id="menu">
-
-    <div class="section-number">
-        02 — EAT & DRINK
-    </div>
-
-    <div class="menu-heading">
 
         <h2>
-            Made for your
-            <em>kind of day.</em>
+          Comfort food.
+          <em>Done differently.</em>
         </h2>
 
+      </div>
+
+
+      <div class="food-list">
+
+        <div class="food-item reveal">
+          <span>01</span>
+          <h3>Peri Peri Fries</h3>
+          <i>→</i>
+        </div>
+
+        <div class="food-item reveal">
+          <span>02</span>
+          <h3>Wood Fired Pizzeria</h3>
+          <i>→</i>
+        </div>
+
+        <div class="food-item reveal">
+          <span>03</span>
+          <h3>Stuffed Pizza Dough Balls</h3>
+          <i>→</i>
+        </div>
+
+        <div class="food-item reveal">
+          <span>04</span>
+          <h3>Burrito Bowl</h3>
+          <i>→</i>
+        </div>
+
+        <div class="food-item reveal">
+          <span>05</span>
+          <h3>Garlic Aioli Dip</h3>
+          <i>→</i>
+        </div>
+
+      </div>
+
+
+      <div class="chef-note">
+        WANT SOMETHING OFF THE MENU?
+        <strong>CALL FOR THE CHEF.</strong>
+      </div>
+
+    </section>
+
+
+    <!-- BAKES -->
+    <section class="bakes">
+
+      <div class="section-number light-number">04 / BAKES</div>
+
+      <div class="bakes-content reveal">
+
+        <p class="eyebrow">
+          FRESH EVERY DAY
+        </p>
+
+        <h2>
+          Baked
+          <em>in-house.</em>
+        </h2>
+
+        <p>
+          Every outlet has its own in-house bakery,
+          making fresh desserts, cakes and house breads every day.
+        </p>
+
+      </div>
+
+
+      <div class="bake-cloud">
+
+        <span>FOCACCIA</span>
+        <span>CHEESECAKE</span>
+        <span>GOOEY BROWNIE</span>
+        <span>CARROT CAKE</span>
+        <span>HOUSE BREAD</span>
+        <span>CAKE SLICES</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- LOCATIONS -->
+    <section class="locations section-light" id="locations">
+
+      <div class="section-number">05 / OUR HOUSES</div>
+
+      <div class="locations-heading reveal">
+
+        <p class="eyebrow dark">
+          COME FIND US
+        </p>
+
+        <h2>
+          Three houses.
+          <em>One feeling.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="location-grid">
+
         <a
-            href="https://sidewalkindia.com/menu/"
-            target="_blank"
-            class="button dark-button"
+          class="location-card"
+          href="https://www.google.com/maps/search/?api=1&query=SideWalk+Cafe+Swaroop+Nagar+Kanpur"
+          target="_blank"
         >
-            VIEW FULL MENU ↗
+          <span class="location-number">01</span>
+
+          <div>
+            <h3>Kanpur</h3>
+            <p>Swaroop Nagar</p>
+          </div>
+
+          <span class="location-arrow">↗</span>
         </a>
 
-    </div>
-
-
-    <div class="menu-grid">
-
-        <!-- COFFEE -->
-
-        <article class="menu-item">
-
-            <div class="menu-top">
-                <span>01</span>
-                <span>COFFEE</span>
-            </div>
-
-            <div class="menu-circle">
-                ☕
-            </div>
-
-            <h3>
-                The Coffee
-            </h3>
-
-            <p>
-                A custom 100% Arabica blend
-                created for the SideWalk ritual.
-            </p>
-
-            <div class="menu-tags">
-
-                <span>Brown Butter Latte</span>
-                <span>Cinnamon Cappuccino</span>
-                <span>Vietnamese Drip</span>
-
-            </div>
-
-        </article>
-
-
-        <!-- FOOD -->
-
-        <article class="menu-item dark">
-
-            <div class="menu-top">
-                <span>02</span>
-                <span>FOOD</span>
-            </div>
-
-            <div class="menu-circle">
-                ✦
-            </div>
-
-            <h3>
-                The Food
-            </h3>
-
-            <p>
-                Familiar comfort food with
-                unexpected SideWalk personality.
-            </p>
-
-            <div class="menu-tags">
-
-                <span>Peri Peri Fries</span>
-                <span>Wood Fired Pizza</span>
-                <span>Burrito Bowl</span>
-
-            </div>
-
-        </article>
-
-
-        <!-- BAKERY -->
-
-        <article class="menu-item">
-
-            <div class="menu-top">
-                <span>03</span>
-                <span>BAKERY</span>
-            </div>
-
-            <div class="menu-circle">
-                ◌
-            </div>
-
-            <h3>
-                The Bakes
-            </h3>
-
-            <p>
-                Freshly made cakes, desserts
-                and breads from every outlet.
-            </p>
-
-            <div class="menu-tags">
-
-                <span>Cheesecake</span>
-                <span>Gooey Brownie</span>
-                <span>Focaccia</span>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     PARALLAX COFFEE SECTION
-========================================= -->
-
-<section class="coffee-banner">
-
-    <div class="coffee-image"></div>
-
-    <div class="coffee-overlay"></div>
-
-    <div class="coffee-content">
-
-        <span class="section-number">
-            THE DAILY RITUAL
-        </span>
-
-        <h2>
-            Good coffee.
-            <em>Great company.</em>
-        </h2>
-
-        <p>
-            Curious about coffee, constantly learning
-            what's new and always chasing the perfect cup.
-        </p>
-
-        <div class="coffee-signature">
-            SIGNATURES / BROWN BUTTER LATTE /
-            VIETNAMESE DRIP / HOT CHOCOLATE
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     LOCATIONS
-========================================= -->
-
-<section class="locations section" id="locations">
-
-    <div class="section-number">
-        03 — FIND YOUR SIDEWALK
-    </div>
-
-    <div class="locations-heading">
-
-        <h2>
-            Pick your
-            <em>neighbourhood.</em>
-        </h2>
-
-        <p>
-            Three houses.
-            One community.
-        </p>
-
-    </div>
-
-
-    <div class="location-grid">
-
-        <!-- KANPUR -->
-
-        <article class="location">
-
-            <div class="location-number">
-                01
-            </div>
-
-            <div class="open">
-                ● OPEN
-            </div>
-
-            <h3>
-                Kanpur
-            </h3>
-
-            <p>
-                7/178A-1 Swaroop Nagar
-                <br>
-                Opp. Little Folks School
-                <br>
-                208002
-            </p>
-
-            <div class="location-bottom">
-
-                <span>
-                    09:00 — 01:00
-                </span>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=SideWalk+Swaroop+Nagar+Kanpur"
-                    target="_blank"
-                >
-                    DIRECTIONS ↗
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- LUCKNOW -->
-
-        <article class="location">
-
-            <div class="location-number">
-                02
-            </div>
-
-            <div class="open">
-                ● OPEN
-            </div>
-
-            <h3>
-                Lucknow
-            </h3>
-
-            <p>
-                4/492, Vivek Khand 2
-                <br>
-                Gomti Nagar
-                <br>
-                226010
-            </p>
-
-            <div class="location-bottom">
-
-                <span>
-                    09:00 — 01:00
-                </span>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=SideWalk+Vivek+Khand+2+Lucknow"
-                    target="_blank"
-                >
-                    DIRECTIONS ↗
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- AGRA -->
-
-        <article class="location">
-
-            <div class="location-number">
-                03
-            </div>
-
-            <div class="open">
-                ● OPEN
-            </div>
-
-            <h3>
-                Agra
-            </h3>
-
-            <p>
-                SideWalk Agra
-                <br>
-                Taj Nagri
-                <br>
-                Agra
-            </p>
-
-            <div class="location-bottom">
-
-                <span>
-                    09:00 — 01:00
-                </span>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=SideWalk+Taj+Nagri+Agra"
-                    target="_blank"
-                >
-                    DIRECTIONS ↗
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     COMMUNITY
-========================================= -->
-
-<section class="community">
-
-    <div class="community-left">
-
-        <span>
-            COMMUNITY
-        </span>
-
-        <div class="community-circle">
-            <span>SW</span>
-        </div>
-
-    </div>
-
-    <div class="community-right">
-
-        <span class="section-number">
-            04 — THE PEOPLE
-        </span>
-
-        <h2>
-            A café is only
-            as good as its
-            <em>people.</em>
-        </h2>
-
-        <p>
-            SideWalk is built around people —
-            the team behind the counter,
-            the friends around the table,
-            the artists, creators and communities
-            who make the space feel alive.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     WEARABLES
-========================================= -->
-
-<section class="wearables section" id="wearables">
-
-    <div class="section-number">
-        05 — SIDEWALK WEARABLES
-    </div>
-
-    <div class="wearable-heading">
-
-        <h2>
-            Wear your
-            <em>coffee club.</em>
-        </h2>
-
-        <p>
-            PREMIUM FABRIC · OVERSIZED
-        </p>
-
-    </div>
-
-
-    <div class="hoodie-grid">
-
-        <!-- WHITE -->
-
-        <article class="hoodie-card">
-
-            <div class="hoodie-stage white-stage">
-
-                <div class="hoodie white-hoodie">
-
-                    <div class="hoodie-text">
-                        ICED<br>
-                        COFFEE<br>
-                        CLUB
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="hoodie-info">
-
-                <div>
-                    <strong>
-                        White — Iced Coffee Club
-                    </strong>
-
-                    <span>
-                        S / M / L
-                    </span>
-                </div>
-
-                <strong>
-                    ₹1,599
-                </strong>
-
-            </div>
-
-        </article>
-
-
-        <!-- BLACK -->
-
-        <article class="hoodie-card">
-
-            <div class="hoodie-stage black-stage">
-
-                <div class="hoodie black-hoodie">
-
-                    <div class="hoodie-text">
-                        GET ME<br>
-                        MY<br>
-                        COFFEE
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="hoodie-info">
-
-                <div>
-                    <strong>
-                        Black — Get Me My Coffee
-                    </strong>
-
-                    <span>
-                        S / M / L
-                    </span>
-                </div>
-
-                <strong>
-                    ₹1,599
-                </strong>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     MUSIC
-========================================= -->
-
-<section class="music" id="sounds">
-
-    <div class="vinyl">
-
-        <div class="vinyl-label">
-            SW
-        </div>
-
-    </div>
-
-    <div class="music-content">
-
-        <span class="section-number">
-            06 — SIDEWALK SOUNDS
-        </span>
-
-        <h2>
-            The soundtrack
-            to your <em>SideWalk.</em>
-        </h2>
-
-        <p>
-            Music is part of the atmosphere.
-            SideWalk personally curates playlists
-            throughout the day to create a particular vibe.
-        </p>
-
-        <div class="artists">
-
-            <span>Petercat Recording Co.</span>
-            <span>Chet Baker</span>
-            <span>Berlioz</span>
-            <span>The Strokes</span>
-            <span>Parekh and Singh</span>
-
-        </div>
 
         <a
+          class="location-card"
+          href="https://www.google.com/maps/search/?api=1&query=SideWalk+Cafe+Gomti+Nagar+Lucknow"
+          target="_blank"
+        >
+          <span class="location-number">02</span>
+
+          <div>
+            <h3>Lucknow</h3>
+            <p>Gomti Nagar</p>
+          </div>
+
+          <span class="location-arrow">↗</span>
+        </a>
+
+
+        <a
+          class="location-card"
+          href="https://www.google.com/maps/search/?api=1&query=SideWalk+Cafe+Taj+Nagar+Agra"
+          target="_blank"
+        >
+          <span class="location-number">03</span>
+
+          <div>
+            <h3>Agra</h3>
+            <p>Taj Nagri</p>
+          </div>
+
+          <span class="location-arrow">↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- WEARABLES -->
+    <section class="wearables" id="wearables">
+
+      <div class="section-number light-number">06 / WEARABLES</div>
+
+      <div class="wearables-heading reveal">
+
+        <p class="eyebrow">
+          SIDEWALK WEARABLES
+        </p>
+
+        <h2>
+          Coffee crew.
+          <em>Wear it.</em>
+        </h2>
+
+        <p>
+          350GSM · PREMIUM FABRIC · OVERSIZED
+        </p>
+
+      </div>
+
+
+      <div class="hoodie-showcase">
+
+        <!-- WHITE HOODIE -->
+        <div class="hoodie-card white-hoodie">
+
+          <div class="hoodie-image">
+            <img
+              src="https://sidewalkindia.com/wp-content/uploads/2025/03/coffee-1.png"
+              alt="SideWalk Coffee Crew"
+            >
+          </div>
+
+          <div class="hoodie-info">
+            <span>01 / WHITE</span>
+            <h3>Iced Coffee Club</h3>
+            <strong>₹1,599</strong>
+          </div>
+
+        </div>
+
+
+        <!-- BLACK HOODIE -->
+        <div class="hoodie-card black-hoodie">
+
+          <div class="hoodie-image">
+            <img
+              src="https://sidewalkindia.com/wp-content/uploads/2025/03/coffee-2.png"
+              alt="SideWalk Coffee Crew Black Hoodie"
+            >
+          </div>
+
+          <div class="hoodie-info">
+            <span>02 / BLACK</span>
+            <h3>Get Me My Coffee</h3>
+            <strong>₹1,599</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <p class="wearable-note">
+        AVAILABLE IN STORES · S / M / L
+      </p>
+
+    </section>
+
+
+    <!-- SOUNDS -->
+    <section class="sounds section-light" id="sounds">
+
+      <div class="section-number">07 / SOUNDS</div>
+
+      <div class="sounds-grid">
+
+        <div class="vinyl-wrap">
+
+          <div class="vinyl">
+
+            <div class="vinyl-center">
+              SW
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="sounds-content reveal">
+
+          <p class="eyebrow dark">
+            HONORABLE MENTION
+          </p>
+
+          <h2>
+            The sound
+            <em>of SideWalk.</em>
+          </h2>
+
+          <p>
+            Personally curated playlists featuring sounds
+            and artists that set the perfect café vibe
+            throughout the day.
+          </p>
+
+          <div class="artists">
+            Petercat Recording Co. · Chet Baker · Berlioz ·
+            The Strokes · Parekh and Singh
+          </div>
+
+          <a
             href="https://open.spotify.com/"
             target="_blank"
-            class="button white-button"
-        >
-            LISTEN ON SPOTIFY ↗
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     CONTACT
-========================================= -->
-
-<section class="contact section">
-
-    <div class="section-number">
-        07 — COME SAY HELLO
-    </div>
-
-    <div class="contact-grid">
-
-        <h2>
-            See you
-            <em>at SideWalk.</em>
-        </h2>
-
-        <div class="contact-details">
-
-            <a href="mailto:hello@sidewalkindia.com">
-                hello@sidewalkindia.com
-            </a>
-
-            <a href="tel:+919838000017">
-                9838000017
-            </a>
-
-            <div class="numbers">
-
-                <span>
-                    KANPUR
-                    <strong>8303001717</strong>
-                </span>
-
-                <span>
-                    LUCKNOW
-                    <strong>7897001717</strong>
-                </span>
-
-            </div>
-
-            <p>
-                96/12, Bhatia Hotel,
-                Parade, Kanpur
-            </p>
+            class="spotify-button"
+          >
+            Listen on Spotify ↗
+          </a>
 
         </div>
 
+      </div>
+
+    </section>
+
+
+    <!-- PEOPLE -->
+    <section class="people">
+
+      <div class="section-number light-number">08 / THE PEOPLE</div>
+
+      <div class="people-content reveal">
+
+        <p class="eyebrow">
+          IT TAKES A VILLAGE
+        </p>
+
+        <h2>
+          The people
+          <em>make the place.</em>
+        </h2>
+
+        <p>
+          Every member of our team is family.
+          Every cup is made with care.
+          Every guest is part of the story.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="final-section">
+
+      <p class="eyebrow">
+        SEE YOU SOON
+      </p>
+
+      <h2>
+        See you
+        <em>at SideWalk.</em>
+      </h2>
+
+      <a href="#locations" class="final-button">
+        Find your house ↗
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-logo">
+        SW
+      </div>
+
+      <div>
+        <p>Community inspired café.</p>
+        <p>Since 2022.</p>
+      </div>
+
     </div>
 
-</section>
 
-</main>
+    <div class="footer-bottom">
 
+      <span>© SIDEWALK</span>
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+      <a href="mailto:hello@sidewalkindia.com">
+        hello@sidewalkindia.com
+      </a>
 
-<footer>
-
-    <div class="footer-logo">
-        SideWalk<span>®</span>
-    </div>
-
-    <div class="footer-links">
-
-        <a href="#story">Story</a>
-        <a href="#menu">Menu</a>
-        <a href="#locations">Locations</a>
-        <a href="#wearables">Wearables</a>
-        <a href="#sounds">Sounds</a>
+      <span>Kanpur · Lucknow · Agra</span>
 
     </div>
 
-    <p>
-        COFFEE · FOOD · BAKERY · COMMUNITY · MUSIC
-    </p>
-
-    <small>
-        © 2026 SideWalk. All rights reserved.
-    </small>
-
-</footer>
+  </footer>
 
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
